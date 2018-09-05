@@ -33,3 +33,6 @@
 
 #dist folder
 dist
+
+#vscode folder
+.vscode

@@ -1,2 +1,0 @@
-/* #undef USE_NVIDIA */
-
