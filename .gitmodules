@@ -1,0 +1,3 @@
+[submodule "dotghost_linux64"]
+	path = dotghost_linux64
+	url = https://github.com/s0t7x/dotghost_linux64
