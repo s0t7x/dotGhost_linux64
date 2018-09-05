@@ -4,12 +4,12 @@
 #include <chrono>
 #include <thread>
 
-class FBase {
+class _thread {
     public:
-        FBase();
-        virtual ~FBase();
-        FBase(FBase const &) = delete;
-        void operator=(FBase const &) = delete;
+        _thread();
+        virtual ~_thread();
+        _thread(_thread const &) = delete;
+        void operator=(_thread const &) = delete;
         void Start();
         void Stop();
 

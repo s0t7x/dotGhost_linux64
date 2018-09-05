@@ -1,8 +1,8 @@
 #pragma once
 
-#include "sdk/cbaseentity.h"
-#include "sdk/centitylist.h"
-#include "sdk/cglowobjectmanager.h"
+#include "utils/cbaseentity.h"
+#include "utils/centitylist.h"
+#include "utils/cglowobjectmanager.h"
 #include "process.h"
 
 #include <iostream>
@@ -16,12 +16,10 @@ class Engine final {
         void SetProcessManager(Process *proc);
         bool IsConnected();
 
-        // Entity List
         CBaseEntityList GetEntityList();
         bool GetEntityById(int id, CBaseEntity* ent);
         bool GetEntityPtrById(int id, uintptr_t* out);
 
-        // Useful things
         void ForceAttack(bool enabled);
     private:
         Engine() = default;

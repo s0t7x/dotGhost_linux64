@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../process.h"
-#include "fbase.h"
+#include "process.h"
+#include "utils/_thread.h"
 
-class FGlow final : public FBase {
+class dotglow final : public _thread {
     Process &m_mem;
     public:
-        FGlow(Process &mem) : m_mem(mem) {};
+        dotglow(Process &mem) : m_mem(mem) {};
     protected:
         void Run();
     private:

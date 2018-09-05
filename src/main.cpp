@@ -1,15 +1,12 @@
-#include "features/faim.h"
-#include "features/fglow.h"
-#include "features/fvisual.h"
-#include "sdk/cbaseentity.h"
-#include "sdk/cglowobjectmanager.h"
-#include "sdk/types.h"
+#include "dotglow.h"
+#include "utils/cbaseentity.h"
+#include "utils/cglowobjectmanager.h"
+#include "utils/types.h"
 
 #include "config.h"
 #include "engine.h"
 #include "globals.h"
 #include "helper.h"
-#include "hwctrl.h"
 #include "offsets.h"
 #include "process.h"
 
@@ -57,7 +54,7 @@ int main()
     
     Process proc(PROCESS_NAME);
 
-    LOG("version horker_1.0.2");
+    LOG("dotghost_linux64 v0.2.0\n");
     
     LOG("Waiting for process...");
     
@@ -88,14 +85,7 @@ int main()
     auto& eng = Engine::GetInstance();
     eng.SetProcessManager(&proc);
     eng.Update(true);
-    // Feature handlers
-    //FAim faim(proc);
-    FGlow fglow(proc);
-    //FVisual fvisual(proc);
-
-    if (Config::Visual::Contrast != 0) {
-        HWCtrl::SetContrast(Config::Visual::Contrast);
-    }
+    dotglow dotglow(proc);
 
     while (!shouldQuit) {
         if (!proc.IsValid()) {
@@ -103,32 +93,17 @@ int main()
             LOG("Lost connection to process... Exiting.\n");
             break;
         }
-
-        // ### BEGIN MENU HACKS ###
-        
-        // ### END MENU HACKS ###
-        
-        // ### BEGIN IN-GAME HACKS ###
         if (eng.IsConnected()) {
-            //faim.Start();
-            fglow.Start();
-            //fvisual.Start();
+            dotglow.Start();
 
             while (eng.IsConnected() && !shouldQuit) {
                 eng.Update();
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
             }
-
-            //faim.Stop();
-            fglow.Stop();
-            //fvisual.Stop();
+            dotglow.Stop();
         }
-        // ### END IN-GAME HACKS ###
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     Helper::Finalize();
-    if (Config::Visual::Contrast != 0) {
-        HWCtrl::SetContrast(0);
-    }
     return 0;
 }

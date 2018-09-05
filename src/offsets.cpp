@@ -1,8 +1,8 @@
 #include "offsets.h"
 
 #include "globals.h"
-#include "sdk/cbaseentity.h"
-#include "sdk/centitylist.h"
+#include "utils/cbaseentity.h"
+#include "utils/centitylist.h"
 #include <cstdio>
 
 #define OFFSET(section, name) uintptr_t Offset::section::name = 0;

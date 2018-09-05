@@ -1,7 +1,9 @@
-rm -rf build
-mkdir build
-cd build 
+rm -rf dist
+mkdir dist
+cd dist
 cmake ..
 make
-echo build complete on ./build/src/horker!
-echo run with ./run.sh script
+mv ./src/dotghost ./dotghost
+rm -rf src CMakeFiles CMakeCache.txt Makefile
+echo build done ./dist/dotGhost!
+echo start with start.sh!

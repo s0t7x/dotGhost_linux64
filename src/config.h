@@ -5,22 +5,6 @@
 bool ReadConfig(const std::string &configFile);
 
 namespace Config {
-    namespace AimBot {
-        extern bool        AimAssist;
-        extern float       AimCorrection;
-        extern float       AimFieldOfView;
-        extern float       AimSpeed;
-        extern int         TargetMode;
-        extern int         TargetBone;
-        extern bool        Trigger;
-        extern int         TriggerDelay;
-        extern bool        UseTriggerKey;
-        extern bool        RecoilControl;
-        extern std::string TriggerKey;
-        extern bool        UseMouseEvents;
-        extern bool        AttackTeammate;
-    };
-
     namespace Glow {
         extern bool  Enabled;
         extern bool  Radar;
@@ -38,12 +22,6 @@ namespace Config {
         extern float AllyG;
         extern float AllyB;
         extern float AllyA;
-    };
-
-    namespace Visual {
-        extern bool NoFlash;
-        extern bool DisablePostProcessing;
-        extern int  Contrast;
     };
 };
 

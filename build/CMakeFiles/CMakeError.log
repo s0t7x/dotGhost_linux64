@@ -1,0 +1,28 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_cb570"
+[1/2] Building CXX object CMakeFiles/cmTC_cb570.dir/CheckSymbolExists.cxx.o
+[2/2] Linking CXX executable cmTC_cb570
+FAILED: cmTC_cb570 
+: && /usr/bin/c++  -std=c++11 -Wall -Wextra  -rdynamic CMakeFiles/cmTC_cb570.dir/CheckSymbolExists.cxx.o  -o cmTC_cb570   && :
+/usr/bin/ld: CMakeFiles/cmTC_cb570.dir/CheckSymbolExists.cxx.o: in function `main':
+CheckSymbolExists.cxx:(.text+0x1b): undefined reference to `pthread_create'
+collect2: Fehler: ld gab 1 als Ende-Status zurück
+ninja: build stopped: subcommand failed.
+
+File /home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

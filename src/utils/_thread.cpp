@@ -1,26 +1,26 @@
-#include "fbase.h"
+#include "_thread.h"
 
 #include <chrono>
 #include <iostream>
 
-FBase::FBase()
+_thread::_thread()
 {
     m_stop = false;
 }
 
-FBase::~FBase()
+_thread::~_thread()
 {
     Stop();
 }
 
-void FBase::Start()
+void _thread::Start()
 {
     Stop();
     m_stop = false;
-    m_thread = std::thread(&FBase::Run, this);
+    m_thread = std::thread(&_thread::Run, this);
 }
 
-void FBase::Stop()
+void _thread::Stop()
 {
     m_stop = true;
     if (m_thread.joinable()) {
@@ -28,12 +28,12 @@ void FBase::Stop()
     }
 }
 
-void FBase::Log(const std::string &msg)
+void _thread::Log(const std::string &msg)
 {
     std::cout << msg << std::endl;
 }
 
-void FBase::LogWait(const std::string &msg, size_t timeout)
+void _thread::LogWait(const std::string &msg, size_t timeout)
 {
     Log(msg);
     Wait(timeout);

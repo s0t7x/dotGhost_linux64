@@ -1,13 +1,13 @@
-#include "fglow.h"
+#include "dotglow.h"
 
-#include "../sdk/cglowobjectmanager.h"
-#include "../config.h"
-#include "../engine.h"
-#include "../offsets.h"
+#include "./utils/cglowobjectmanager.h"
+#include "config.h"
+#include "engine.h"
+#include "offsets.h"
 
 typedef struct GlowObjectDefinition_t glow_t;
 
-void FGlow::Radar(uintptr_t entPtr, int lTeam, int rTeam)
+void dotglow::Radar(uintptr_t entPtr, int lTeam, int rTeam)
 {
     if (rTeam == TEAM_T || rTeam == TEAM_CT) {
         if (rTeam != lTeam) {
@@ -16,7 +16,7 @@ void FGlow::Radar(uintptr_t entPtr, int lTeam, int rTeam)
     }
 }
 
-void FGlow::Run()
+void dotglow::Run()
 {
     if (!Config::Glow::Enabled) {
         return;
@@ -46,7 +46,7 @@ void FGlow::Run()
 
     CGlowObjectManager manager;
 
-    Log("[FGlow] Started");
+    Log("glow activated");
 
     while (!ShouldStop()) {
         struct iovec g_local[1024];
@@ -58,7 +58,7 @@ void FGlow::Run()
         memset(g_glow, 0, sizeof(g_glow));
 
         if (!m_mem.Read(Offset::Client::GlowObjectManager, &manager)) {
-            LogWait("[Glow] Failed to read GlowObjectManager");
+            LogWait("failed to read GlowObjectManager");
             continue;
         }
 
@@ -66,13 +66,13 @@ void FGlow::Run()
         const uintptr_t aGlowData = manager.Data();
 
         if (!m_mem.Read(aGlowData, g_glow, sizeof(glow_t) * count)) {
-            LogWait("[Glow] Failed to read m_GlowObjectDefinitions");
+            LogWait("failed to read m_GlowObjectDefinitions");
             continue;
         }
 
         uintptr_t localPlayer;
         if (!m_mem.Read(Offset::Client::LocalPlayer, &localPlayer)) {
-            LogWait("[Glow] Failed to read local player address");
+            LogWait("failed to read local player address");
             continue;
         }
 
@@ -134,5 +134,5 @@ void FGlow::Run()
         m_mem.WriteMulti(g_local, g_remote, writeCount);
         WaitMs(2);
     }
-    Log("[FGlow] Stopped");
+    Log("glow deactivated");
 }
