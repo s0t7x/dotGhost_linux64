@@ -1,6 +1,3 @@
-# dotGhost_linux64
-linux64 port of dotGhost CSGO hook
-
 # DOTGHOST VERSION CHANGELOG
 ## 25.02.2016 version 1.5
 - Debug_Aimlock now draws vecPunchAngle
