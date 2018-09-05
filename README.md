@@ -2,40 +2,40 @@
 linux64 port of dotGhost CSGO hook
 
 # DOTGHOST VERSION CHANGELOG
-25.02.2016 version 1.5
-	- Debug_Aimlock now draws vecPunchAngle
-	- Triggerbot now can use Aimlock (cfg_triggerbot_iAimlock)
-	- "Hide" Draw Mode introduced	
-	- Aimlock works a little bit better
+## 25.02.2016 version 1.5
+- Debug_Aimlock now draws vecPunchAngle
+- Triggerbot now can use Aimlock (cfg_triggerbot_iAimlock)
+- "Hide" Draw Mode introduced	
+- Aimlock works a little bit better
 
-19.01.2016 version 1.4
-	- new code signature
-	- edited some bugs with new player struct
+## 19.01.2016 version 1.4
+- new code signature
+- edited some bugs with new player struct
 
-08.01.2016 version 1.3
-	- added 400 lines of junk code
-	- added new configuration to either ask for dump or not
-	- fixed a bug where m_vecVelocity[0] wasnt read correctly
-	- new code signature
+## 08.01.2016 version 1.3
+- added 400 lines of junk code
+- added new configuration to either ask for dump or not
+- fixed a bug where m_vecVelocity[0] wasnt read correctly
+- new code signature
 
-20.12.2015 version 1.2:
-	- added icon
-	- aimlock does not longer lock onto enemy while in recoil
-	- fixed a bug where some settings in the "config.cfg" didnt work
-	- several runtime optimizations
-	- new code signature
+## 20.12.2015 version 1.2
+- added icon
+- aimlock does not longer lock onto enemy while in recoil
+- fixed a bug where some settings in the "config.cfg" didnt work
+- several runtime optimizations
+- new code signature
 
-20.12.2015 version 1.1:
-	- new function to read settings out of "config.cfg"
-	- fixed a bug where the Aimlock locked the view on false coordinates
-	- fixed "GetEnginePointerAddr()" as it was updated by the game
-	- fixed "draw_DebugAimlock()" to really draw most important debug information instead of things we dont even use
-	- fixed entity array
-	- several runtime optimizations
-	- new code signature
+## 20.12.2015 version 1.1
+- new function to read settings out of "config.cfg"
+- fixed a bug where the Aimlock locked the view on false coordinates
+- fixed "GetEnginePointerAddr()" as it was updated by the game
+- fixed "draw_DebugAimlock()" to really draw most important debug information instead of things we dont even use
+- fixed entity array
+- several runtime optimizations
+- new code signature
 
-18.12.2015 version 1.0:
-	- initial working release
+## 18.12.2015 version 1.0
+- initial working release
   
   # Commentary
 Our goal was to implement our own code into the game during the lifetime of Cs-Go in order to gain advantages over other players.
