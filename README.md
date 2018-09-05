@@ -1,3 +1,13 @@
+# DOTGHOST_LINUX64 CHANGELOG
+## 05.09.2018 version 0.2.0
+- implement linux memory access
+- working glow
+- magic code cleanup
+
+## 05.09.2018 version 0.1.0
+- forked from original v1.5
+- some serious signature and secuirity shit
+
 # DOTGHOST VERSION CHANGELOG
 ## 25.02.2016 version 1.5
 - Debug_Aimlock now draws vecPunchAngle
