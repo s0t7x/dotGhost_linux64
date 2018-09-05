@@ -22,7 +22,7 @@
 ## 19.01.2016 version 1.4
 - new code signature
 - edited some bugs with new player struct
-
+  
 ## 08.01.2016 version 1.3
 - added 400 lines of junk code
 - added new configuration to either ask for dump or not

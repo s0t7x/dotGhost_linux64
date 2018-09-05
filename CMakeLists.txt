@@ -7,6 +7,5 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/modules/")
 
 find_package (Threads REQUIRED)
 find_package (X11 REQUIRED)
-find_package (NVCtrlLib)
 
 add_subdirectory(src)

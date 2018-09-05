@@ -1,6 +1,6 @@
 #include "dotglow.h"
 
-#include "./utils/cglowobjectmanager.h"
+#include "utils/cglowobjectmanager.h"
 #include "config.h"
 #include "engine.h"
 #include "offsets.h"

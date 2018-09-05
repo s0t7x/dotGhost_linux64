@@ -1,0 +1,5 @@
+/home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/CMakeFiles/rebuild_cache.dir
+/home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/CMakeFiles/edit_cache.dir
+/home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/src/CMakeFiles/rebuild_cache.dir
+/home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/src/CMakeFiles/dotghost.dir
+/home/s0t7x/Dokumente/Visual Studio Code/dotGhost_linux64/build/src/CMakeFiles/edit_cache.dir
