@@ -16,22 +16,31 @@ Unfortunately, during development we often had problems with patches, ie updates
 ; dotghost_linux64
 
 [Glow]
+; 0 = Disable Section, 1 = Enable Section
 Enabled = 1
+; 0 = Disable Radarhack, 1 = Enable Radarhack
 Radar = 1
+; Enemy Glow RGBA as floating value
 EnemyR = 1
 EnemyG = 0
 EnemyB = 0
 EnemyA = 0.8
+; Ally Glow RGBA as floating value
 AllyR = 0
 AllyG = 0
 AllyB = 0.1
 AllyA = 0.8
 
 [AimBot]
+; 0 = Disable Section, 1 = Enable Section
 Enabled = 1
+; Set Target Bone, 8 = Head
 TargetBone = 8
+; Set Maximum FOV
 FOV = 40
+; Sets Bot Mode: 0 = Always On, 1 = OnKeyPress
 Mode = 1
+; Key as X11 Keysym
 Key = v
 ```
 
