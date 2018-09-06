@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo ./update.sh
+# sudo ./update.sh
 ./build.sh
 echo .
 echo "Starting..."

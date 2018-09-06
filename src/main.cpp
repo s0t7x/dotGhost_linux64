@@ -58,7 +58,8 @@ int main()
     Process proc(PROCESS_NAME);
 
     PRINT_VERSION;
-    
+    ReadConfig("config.ini");
+
     LOG("Waiting for process...");
     
     while (!proc.Attach() && !shouldQuit) {

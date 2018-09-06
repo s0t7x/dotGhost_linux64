@@ -72,7 +72,6 @@ void UpdateConfig()
 bool ReadConfig(const std::string &configFile)
 {
     INIReader reader(configFile);
-
     if (reader.ParseError() < 0) {
         UpdateConfig();
         return false;
