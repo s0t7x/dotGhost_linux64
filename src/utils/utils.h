@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../sdk/vector.h"
+#include "vector.h"
 
 #include <cfloat>
 #include <cmath>
@@ -11,7 +11,7 @@
 #define DEG2RAD( x )  ( (float)(x) * (float)( M_PI_F / 180.f ) )
 #define RAD2DEG( x )  ( (float)(x) * (float)( 180.f/M_PI_F ) )
 
-class HMath {
+class utils {
     public:
         static void MakeVector(Vector angle, Vector& vector);
         static float Dot(const Vector& v1, Vector& v2);
@@ -25,7 +25,7 @@ class HMath {
         static constexpr double RADPI = 180.0f / PI;
 };
 
-inline Vector HMath::ClampAim(Vector v, float max, float correction)
+inline Vector utils::ClampAim(Vector v, float max, float correction)
 {
     for (size_t i = 0; i < 2; ++i) {
         if (v[i] < -correction && v[i] > -1.f)
@@ -41,9 +41,9 @@ inline Vector HMath::ClampAim(Vector v, float max, float correction)
     return v;
 }
 
-inline Vector HMath::CalcAngle(const Vector& localPos, const Vector &targetPos)
+inline Vector utils::CalcAngle(const Vector& localPos, const Vector &targetPos)
 {
-    constexpr float fRadPi = 180.0f / (float)(HMath::PI);
+    constexpr float fRadPi = 180.0f / (float)(utils::PI);
     Vector aim = {};
     Vector delta = localPos - targetPos;
 
@@ -57,28 +57,28 @@ inline Vector HMath::CalcAngle(const Vector& localPos, const Vector &targetPos)
     return aim;
 }
 
-inline float HMath::GetFov(const Vector& eyePos, const Vector& localHeadPos, const Vector& targetHeadPos)
+inline float utils::GetFov(const Vector& eyePos, const Vector& localHeadPos, const Vector& targetHeadPos)
 {
     float dist = localHeadPos.DistTo(targetHeadPos);
-    Vector ang = HMath::CalcAngle(localHeadPos, targetHeadPos);
+    Vector ang = utils::CalcAngle(localHeadPos, targetHeadPos);
     float yaw = ((float) std::sin(std::abs(eyePos.y - ang.y) * M_PI_F / 180.0f)) * dist;
     float pitch = ((float) std::sin(std::abs(eyePos.x - ang.x) * M_PI_F / 180.0f)) * dist;
     return (float) std::sqrt((yaw*yaw) + (pitch * pitch));
 }
 
-inline Vector HMath::VectorAngles(const Vector& dir)
+inline Vector utils::VectorAngles(const Vector& dir)
 {
     Vector angles = dir;
     double hyp = std::sqrt((dir.x * dir.x) + (dir.y * dir.y));
-    angles.x = (float) std::atan(dir.z / hyp) * HMath::RADPI;
-    angles.y = (float) std::atan(dir.y / dir.x) * HMath::RADPI;
+    angles.x = (float) std::atan(dir.z / hyp) * utils::RADPI;
+    angles.y = (float) std::atan(dir.y / dir.x) * utils::RADPI;
     if (dir.x >= 0.0) {
         angles.y += 180.0f;
     }
     return angles;
 }
 
-inline Vector HMath::ClampAngle(const Vector& v)
+inline Vector utils::ClampAngle(const Vector& v)
 {
     Vector vang = v;
     if (vang.x > 89.0f && vang.y <= 180.0f)

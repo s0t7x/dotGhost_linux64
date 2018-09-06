@@ -78,72 +78,54 @@ build src/CMakeFiles/dotghost.dir/utils/_thread.cpp.o: CXX_COMPILER__dotghost ..
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir/utils
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/dotglow.cpp.o: CXX_COMPILER__dotghost ../src/dotglow.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/dotglow.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/utils/centitylist.cpp.o: CXX_COMPILER__dotghost ../src/utils/centitylist.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/utils/centitylist.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir/utils
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/helper.cpp.o: CXX_COMPILER__dotghost ../src/helper.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/helper.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/config.cpp.o: CXX_COMPILER__dotghost ../src/config.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/config.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/engine.cpp.o: CXX_COMPILER__dotghost ../src/engine.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/engine.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/main.cpp.o: CXX_COMPILER__dotghost ../src/main.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/main.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/offsets.cpp.o: CXX_COMPILER__dotghost ../src/offsets.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/offsets.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 build src/CMakeFiles/dotghost.dir/process.cpp.o: CXX_COMPILER__dotghost ../src/process.cpp || cmake_object_order_depends_target_dotghost
   DEP_FILE = src/CMakeFiles/dotghost.dir/process.cpp.o.d
   FLAGS = -std=c++11 -Wall -Wextra -g   -pthread -std=gnu++11
   INCLUDES = -Isrc
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   OBJECT_FILE_DIR = src/CMakeFiles/dotghost.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
-  TARGET_PDB = src/dotghost.pdb
 
 # =============================================================================
 # Link build statements for EXECUTABLE target dotghost
@@ -159,9 +141,8 @@ build src/dotghost: CXX_EXECUTABLE_LINKER__dotghost src/CMakeFiles/dotghost.dir/
   OBJECT_DIR = src/CMakeFiles/dotghost.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = src/CMakeFiles/dotghost.dir/
   TARGET_FILE = src/dotghost
-  TARGET_PDB = src/dotghost.pdb
+  TARGET_PDB = dotghost.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -208,13 +189,13 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../modules/FindNVCtrlLib.cmake ../src/CMakeLists.txt ../src/defines.h.in /usr/share/cmake-3.12/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.12/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.12/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.12/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.12/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.12/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.12/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.12/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.12/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.12/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.12/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.12/Modules/CheckForPthreads.c /usr/share/cmake-3.12/Modules/CheckFunctionExists.c /usr/share/cmake-3.12/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.12/Modules/CheckIncludeFile.cxx.in /usr/share/cmake-3.12/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.12/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.12/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.12/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.12/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.12/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX-FeatureTests.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU.cmake /usr/share/cmake-3.12/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.12/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/MIPSpro-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.12/Modules/FindPackageMessage.cmake /usr/share/cmake-3.12/Modules/FindThreads.cmake /usr/share/cmake-3.12/Modules/FindX11.cmake /usr/share/cmake-3.12/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.12/Modules/Platform/Linux.cmake /usr/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.1/CMakeCXXCompiler.cmake CMakeFiles/3.12.1/CMakeSystem.cmake CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx CMakeFiles/FindThreads/CheckForPthreads.cxx CMakeFiles/feature_tests.cxx
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt /usr/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.12/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.12/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.12/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.12/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU.cmake /usr/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.12/Modules/FindPackageMessage.cmake /usr/share/cmake-3.12/Modules/FindThreads.cmake /usr/share/cmake-3.12/Modules/FindX11.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.12/Modules/Platform/Linux.cmake /usr/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.1/CMakeCXXCompiler.cmake CMakeFiles/3.12.1/CMakeSystem.cmake
   pool = console
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../modules/FindNVCtrlLib.cmake ../src/CMakeLists.txt ../src/defines.h.in /usr/share/cmake-3.12/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.12/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.12/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.12/Modules/CMakeConfigurableFile.in /usr/share/cmake-3.12/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.12/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.12/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.12/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.12/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.12/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.12/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.12/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.12/Modules/CheckForPthreads.c /usr/share/cmake-3.12/Modules/CheckFunctionExists.c /usr/share/cmake-3.12/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.12/Modules/CheckIncludeFile.cxx.in /usr/share/cmake-3.12/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.12/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.12/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.12/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.12/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.12/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX-FeatureTests.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU.cmake /usr/share/cmake-3.12/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.12/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/MIPSpro-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.12/Modules/FindPackageMessage.cmake /usr/share/cmake-3.12/Modules/FindThreads.cmake /usr/share/cmake-3.12/Modules/FindX11.cmake /usr/share/cmake-3.12/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.12/Modules/Platform/Linux.cmake /usr/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.1/CMakeCXXCompiler.cmake CMakeFiles/3.12.1/CMakeSystem.cmake CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx CMakeFiles/FindThreads/CheckForPthreads.cxx CMakeFiles/feature_tests.cxx: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt /usr/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.12/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.12/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.12/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.12/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Compiler/GNU.cmake /usr/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.12/Modules/FindPackageMessage.cmake /usr/share/cmake-3.12/Modules/FindThreads.cmake /usr/share/cmake-3.12/Modules/FindX11.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.12/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.12/Modules/Platform/Linux.cmake /usr/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.1/CMakeCXXCompiler.cmake CMakeFiles/3.12.1/CMakeSystem.cmake: phony
 
 #############################################
 # Clean all the built files.

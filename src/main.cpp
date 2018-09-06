@@ -1,4 +1,6 @@
 #include "dotglow.h"
+#include "dotaim.h"
+
 #include "utils/cbaseentity.h"
 #include "utils/cglowobjectmanager.h"
 #include "utils/types.h"
@@ -20,6 +22,7 @@
 #include <unistd.h>
 
 #define LOG(X) std::cout << X << std::flush
+#define PRINT_VERSION std::cout << "dotghost_linux64 v0.4.2 \n" << std::flush
 
 bool shouldQuit = false;
 
@@ -54,7 +57,7 @@ int main()
     
     Process proc(PROCESS_NAME);
 
-    LOG("dotghost_linux64 v0.2.0\n");
+    PRINT_VERSION;
     
     LOG("Waiting for process...");
     
@@ -86,6 +89,7 @@ int main()
     eng.SetProcessManager(&proc);
     eng.Update(true);
     dotglow dotglow(proc);
+    dotaim dotaim(proc);
 
     while (!shouldQuit) {
         if (!proc.IsValid()) {
@@ -95,12 +99,14 @@ int main()
         }
         if (eng.IsConnected()) {
             dotglow.Start();
+            dotaim.Start();
 
             while (eng.IsConnected() && !shouldQuit) {
                 eng.Update();
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
             }
             dotglow.Stop();
+            dotaim.Stop();
         }
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }

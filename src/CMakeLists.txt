@@ -1,6 +1,7 @@
 add_executable(dotghost
     utils/_thread.cpp
     dotglow.cpp
+    dotaim.cpp
     utils/centitylist.cpp
     helper.cpp
     config.cpp
@@ -9,7 +10,6 @@ add_executable(dotghost
     offsets.cpp
     process.cpp
 )
-
 
 target_link_libraries(dotghost
     ${X11_LIBRARIES}
@@ -20,4 +20,5 @@ target_link_libraries(dotghost
 target_include_directories(dotghost PRIVATE
     ${CMAKE_CURRENT_BINARY_DIR}
 )
+
 set_property(TARGET dotghost PROPERTY CXX_STANDARD 11)

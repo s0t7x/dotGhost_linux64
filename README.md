@@ -1,4 +1,9 @@
 # DOTGHOST_LINUX64 CHANGELOG
+## 06.09.2018 version 0.4.2
+- first attempt of aimbot
+- cleaned up code a bit
+- config file edited for aimbot
+
 ## 05.09.2018 version 0.3.0
 - working with easier config.ini instead of config.cfg
 - replaced cfgReader with Ini Libary

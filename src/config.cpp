@@ -9,20 +9,20 @@ constexpr char defConfigFile[] = "config.ini";
 
 bool  Config::Glow::Enabled   = true;
 bool  Config::Glow::Radar     = true;
-bool  Config::Glow::LegitGlow = false;
-bool  Config::Glow::GlowAllies = true;
-bool  Config::Glow::GlowEnemies = true;
-bool  Config::Glow::GlowOther   = false;
-bool  Config::Glow::GlowWeapons = false;
-float Config::Glow::EnemyR    = 0.8f;
-float Config::Glow::EnemyG    = 0.8f;
+float Config::Glow::EnemyR    = 1.0f;
+float Config::Glow::EnemyG    = 0.0f;
 float Config::Glow::EnemyB    = 0.0f;
 float Config::Glow::EnemyA    = 0.8f;
-
 float Config::Glow::AllyR     = 0.0f;
-float Config::Glow::AllyG     = 0.8f;
-float Config::Glow::AllyB     = 0.8f;
+float Config::Glow::AllyG     = 0.0f;
+float Config::Glow::AllyB     = 0.1f;
 float Config::Glow::AllyA     = 0.8f;
+
+bool Config::AimBot::Enabled    = true;
+int Config::AimBot::TargetBone  = 8;
+int Config::AimBot::FOV         = 40;
+bool Config::AimBot::Mode       = 1;
+std::string Config::AimBot::Key = "v";
 
 #define WriteSection(key) \
     conf << "[" #key "]" << "\n";
@@ -35,14 +35,12 @@ void UpdateConfig()
 {
     std::ofstream conf(defConfigFile);
     if (conf.is_open()) {
+        WriteComment("dotghost_linux64");
+        WriteSectionEnd();
+
         WriteSection(Glow);
         WritePair(Glow, Enabled);
         WritePair(Glow, Radar);
-        WritePair(Glow, LegitGlow);
-        WritePair(Glow, GlowAllies);
-        WritePair(Glow, GlowEnemies);
-        WritePair(Glow, GlowOther);
-        WritePair(Glow, GlowWeapons);
         WritePair(Glow, EnemyR);
         WritePair(Glow, EnemyG);
         WritePair(Glow, EnemyB);
@@ -51,6 +49,14 @@ void UpdateConfig()
         WritePair(Glow, AllyG);
         WritePair(Glow, AllyB);
         WritePair(Glow, AllyA);
+        WriteSectionEnd();
+
+        WriteSection(AimBot);
+        WritePair(AimBot, Enabled);
+        WritePair(AimBot, TargetBone);
+        WritePair(AimBot, FOV);
+        WritePair(AimBot, Mode);
+        WritePair(AimBot, Key);
         WriteSectionEnd();
     }
 }
@@ -74,11 +80,6 @@ bool ReadConfig(const std::string &configFile)
 
     RCBOOL(Glow, Enabled);
     RCBOOL(Glow, Radar);
-    RCBOOL(Glow, LegitGlow);
-    RCBOOL(Glow, GlowAllies);
-    RCBOOL(Glow, GlowEnemies);
-    RCBOOL(Glow, GlowOther);
-    RCBOOL(Glow, GlowWeapons);
     RCDBL (Glow, EnemyR);
     RCDBL (Glow, EnemyG);
     RCDBL (Glow, EnemyB);
@@ -87,6 +88,12 @@ bool ReadConfig(const std::string &configFile)
     RCDBL (Glow, AllyG);
     RCDBL (Glow, AllyB);
     RCDBL (Glow, AllyA);
+
+    RCBOOL(AimBot, Enabled);
+    RCINT(AimBot, TargetBone);
+    RCINT(AimBot, FOV);
+    RCBOOL(AimBot, Mode);
+    RCSTR(AimBot, Key);
     
     UpdateConfig();
     return true;

@@ -38,11 +38,11 @@ void dotglow::Run()
 
     const float clrO[4] {.9f, .5f, .9f, .4f};
 
-    const bool bGlowAllies = Config::Glow::GlowAllies;
-    const bool bGlowEnemies = Config::Glow::GlowEnemies;
-    const bool bGlowOther = Config::Glow::GlowOther;
-    const bool bGlowWeapons = Config::Glow::GlowWeapons;
-    const bool bLegitGlow = Config::Glow::LegitGlow;
+    // Debugging
+    const bool bGlowAllies = true;
+    const bool bGlowEnemies = true;
+    const bool bGlowOther = false;
+    const bool bGlowWeapons = false;
 
     CGlowObjectManager manager;
 
@@ -90,9 +90,6 @@ void dotglow::Run()
             CBaseEntity ent;
             if (!m_mem.Read(g_glow[i].m_pEntity, &ent))
                 continue;
-            if (bLegitGlow) {
-                g_glow[i].m_nGlowStyle = 2;
-            }
 
             if (Config::Glow::Radar) {
                 this->Radar(g_glow[i].m_pEntity, myTeam, ent.m_iTeamNum);
