@@ -1,5 +1,6 @@
 #include "dotglow.h"
 #include "dotaim.h"
+#include "dottrigger.h"
 
 #include "utils/cbaseentity.h"
 #include "utils/cglowobjectmanager.h"
@@ -22,7 +23,7 @@
 #include <unistd.h>
 
 #define LOG(X) std::cout << X << std::flush
-#define PRINT_VERSION std::cout << "dotghost_linux64 v0.4.2 \n" << std::flush
+#define PRINT_VERSION std::cout << "dotghost_linux64 v0.5.2 \n" << std::flush
 
 bool shouldQuit = false;
 
@@ -91,6 +92,7 @@ int main()
     eng.Update(true);
     dotglow dotglow(proc);
     dotaim dotaim(proc);
+    dottrigger dottrigger(proc);
 
     while (!shouldQuit) {
         if (!proc.IsValid()) {
@@ -101,6 +103,7 @@ int main()
         if (eng.IsConnected()) {
             dotglow.Start();
             dotaim.Start();
+            dottrigger.Start();
 
             while (eng.IsConnected() && !shouldQuit) {
                 eng.Update();
@@ -108,6 +111,7 @@ int main()
             }
             dotglow.Stop();
             dotaim.Stop();
+            dottrigger.Stop();
         }
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }

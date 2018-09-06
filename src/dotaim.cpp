@@ -134,11 +134,6 @@ void dotaim::aim(uintptr_t localPlayer)
         Vector out = utils::ClampAim(diffAngles, aimSpeed, aimCorrection);
         viewAngle -= out;
         m_mem.Write(Offset::Engine::ClientState + Offset::Static::ViewAngles, viewAngle);
-        if (Config::AimBot::TriggerBot) {
-            system("xdotool click 1");
-        }
-
-
         }
 }
 
@@ -159,12 +154,12 @@ void dotaim::Run() {
             continue;
         }
 
-        bool triggerOn = true;
+        bool mode = true;
         if (Config::AimBot::Mode) {
-            triggerOn = Helper::IsKeyDown(triggerKey);
+            mode = Helper::IsKeyDown(triggerKey);
         }
 
-        if (Config::AimBot::Enabled && triggerOn) {
+        if (Config::AimBot::Enabled && mode) {
             this->aim(localPlayer);
         }
 

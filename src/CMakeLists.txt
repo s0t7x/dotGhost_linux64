@@ -2,6 +2,7 @@ add_executable(dotghost
     utils/_thread.cpp
     dotglow.cpp
     dotaim.cpp
+    dottrigger.cpp
     utils/centitylist.cpp
     helper.cpp
     config.cpp
