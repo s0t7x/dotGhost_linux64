@@ -15,10 +15,11 @@ float Config::Glow::EnemyB    = 0.0f;
 float Config::Glow::EnemyA    = 0.8f;
 float Config::Glow::AllyR     = 0.0f;
 float Config::Glow::AllyG     = 0.0f;
-float Config::Glow::AllyB     = 0.1f;
+float Config::Glow::AllyB     = 1.0f;
 float Config::Glow::AllyA     = 0.8f;
 
 bool Config::AimBot::Enabled    = true;
+bool Config::AimBot::TriggerBot = false;
 int Config::AimBot::TargetBone  = 8;
 int Config::AimBot::FOV         = 40;
 bool Config::AimBot::Mode       = 1;
@@ -53,6 +54,7 @@ void UpdateConfig()
 
         WriteSection(AimBot);
         WritePair(AimBot, Enabled);
+        WritePair(AimBot, TriggerBot);
         WritePair(AimBot, TargetBone);
         WritePair(AimBot, FOV);
         WritePair(AimBot, Mode);
@@ -89,6 +91,7 @@ bool ReadConfig(const std::string &configFile)
     RCDBL (Glow, AllyA);
 
     RCBOOL(AimBot, Enabled);
+    RCBOOL(AimBot, TriggerBot);
     RCINT(AimBot, TargetBone);
     RCINT(AimBot, FOV);
     RCBOOL(AimBot, Mode);

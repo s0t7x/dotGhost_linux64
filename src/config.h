@@ -20,6 +20,7 @@ namespace Config {
 
     namespace AimBot {
         extern bool Enabled;
+        extern bool TriggerBot;
         extern int TargetBone;
         extern int FOV;
         extern bool Mode;

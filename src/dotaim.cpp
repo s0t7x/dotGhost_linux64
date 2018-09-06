@@ -134,6 +134,11 @@ void dotaim::aim(uintptr_t localPlayer)
         Vector out = utils::ClampAim(diffAngles, aimSpeed, aimCorrection);
         viewAngle -= out;
         m_mem.Write(Offset::Engine::ClientState + Offset::Static::ViewAngles, viewAngle);
+        if (Config::AimBot::TriggerBot) {
+            system("xdotool click 1");
+        }
+
+
         }
 }
 

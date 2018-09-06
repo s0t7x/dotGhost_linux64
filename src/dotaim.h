@@ -18,5 +18,4 @@ class dotaim : public _thread {
     private:
     void aim(uintptr_t localPlayer);
     bool getBonePosition(uintptr_t ePtr, int bone, Vector *out);
-    void doTrigger();
 };
