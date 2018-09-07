@@ -87,6 +87,15 @@ void dotaim::aim(uintptr_t localPlayer)
             continue;
         }
 
+        bool visible;
+        if (!m_mem.Read(entInfo.m_pEntity + Netvar::CBasePlayer::m_bSpottedByMask, &visible)) {
+            continue;
+        }
+
+        if (!visible){
+            continue;
+        }
+
         int pTeam;
         if (!m_mem.Read(localPlayer + Netvar::CBaseEntity::m_iTeamNum, &pTeam)) {
             continue;

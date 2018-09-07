@@ -45,6 +45,12 @@ Key = v
 ```
 
 # DOTGHOST_LINUX64 CHANGELOG
+## 07.09.2018 version 0.5.3
+- implemented visibilty check for aimbot
+
+## 07.09.2018 version 0.5.2
+- working aim and triggerbot
+
 ## 06.09.2018 version 0.4.2
 - first attempt of aimbot
 - cleaned up code a bit
