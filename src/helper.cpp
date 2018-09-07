@@ -2,6 +2,7 @@
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/keysymdef.h>
+#include "config.h"
 
 static Display* m_dpy = nullptr;
 bool Helper::Init()

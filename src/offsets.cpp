@@ -27,7 +27,6 @@ OFFSET(Client, LocalPlayer);
 OFFSET(Client, PlayerResources);
 OFFSET(Client, PostProcessing);
 OFFSET(Engine, ClientState);
-
 namespace Sig {
     SIGNATURE(LocalPlayer, "48 89 E5 74 0E 48 8D 05", 0x7);
     SIGNATURE(GlowObjectManager, "E8 ?? ?? ?? ?? 48 8B 3D ?? ?? ?? ?? BE 01 00 00 00 C7", 0x0);

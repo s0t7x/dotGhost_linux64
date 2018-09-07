@@ -12,6 +12,7 @@ class dotaim : public _thread {
     dotaim(Process &mem) : m_mem(mem)
     { 
     }
+    bool active = true;
     protected:
     void Run();
 

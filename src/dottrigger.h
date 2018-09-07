@@ -13,6 +13,10 @@ class dottrigger : public _thread {
     dottrigger(Process &mem) : m_mem(mem)
     { 
     }
+    bool active = true;
     protected:
     void Run();
+
+    private:
+    void trigger(uintptr_t localPlayer);
 };

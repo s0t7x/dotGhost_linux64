@@ -138,8 +138,7 @@ void dotaim::aim(uintptr_t localPlayer)
 }
 
 void dotaim::Run() {
-    const int triggerKey = Helper::StringToKeycode(Config::AimBot::Key);
-
+    
     Log("aimbot started");
 
     while (!ShouldStop()) {
@@ -154,12 +153,7 @@ void dotaim::Run() {
             continue;
         }
 
-        bool mode = true;
-        if (Config::AimBot::Mode) {
-            mode = Helper::IsKeyDown(triggerKey);
-        }
-
-        if (Config::AimBot::Enabled && mode) {
+        if (Config::AimBot::Enabled && active) {
             this->aim(localPlayer);
         }
 

@@ -1,50 +1,61 @@
 #include "dottrigger.h"
-#include "engine.h"
+
 #include "utils/cbaseentity.h"
-#include "utils/types.h"
 #include "config.h"
 #include "offsets.h"
-#include "utils/_thread.h"
 #include "helper.h"
+#include "engine.h"
+
+#include <cstdio>
+#include <cstdlib>
+#include <X11/Xlib.h>
 
 #include <chrono>
 
+void dottrigger::trigger(uintptr_t localPlayer){
+    auto &eng = Engine::GetInstance();
+    int pTeam;
+    if (!m_mem.Read(localPlayer + Netvar::CBaseEntity::m_iTeamNum, &pTeam)){
+        return;
+    }
+
+   
+int inCrossID;
+            if (!m_mem.Read(localPlayer + Netvar::CBasePlayer::m_iCrosshairID, &inCrossID)) {
+                return;
+            }
+
+            if (inCrossID > 0 && inCrossID < 65) {
+                CBaseEntity ent;
+                if (!eng.GetEntityById(inCrossID, &ent)) {
+                    return;
+                }
+                if (ent.m_iHealth > 0) {
+                    if (ent.m_iTeamNum != pTeam) {
+                        eng.ForceAttack(true);
+                        WaitMs(10);
+                        eng.ForceAttack(false);
+                    }
+                }
+            }    
+}
+
 void dottrigger::Run(){
-    const int triggerKey = Helper::StringToKeycode(Config::AimBot::Key);
+    if(!Config::AimBot::TriggerBot){
+        return;
+    }
+    
+    Log("trigger activated");
 
     while(!ShouldStop()){
         uintptr_t localPlayer;
         if (!m_mem.Read(Offset::Client::LocalPlayer, &localPlayer)) {
             continue;
         }
-
-        int crosshairId;
-        if (!m_mem.Read(localPlayer + Netvar::CBasePlayer::m_iCrosshairID ,&crosshairId)) {
-            WaitMs(20);
-            continue;
+        if(active) {
+            this->trigger(localPlayer);
         }
-
-        CBaseEntity e;
-        auto& eng = Engine::GetInstance();
-        if (!eng.GetEntityById(crosshairId, &e)){
-            continue;
-        }
-
-        bool mode = true;
-        if (Config::AimBot::Mode) {
-            mode = Helper::IsKeyDown(triggerKey);
-        }
-
-        if (Config::AimBot::TriggerBot && mode) {
-            int pTeam;
-            if (!m_mem.Read(localPlayer + Netvar::CBaseEntity::m_iTeamNum, &pTeam)){
-                continue;
-            }
-            int eTeam = e.m_iTeamNum;
-            if ( pTeam != eTeam ){
-                m_mem.Write(Offset::Client::ForceAttack, true, sizeof(bool));
-                WaitMs(40);
-            }
-        }
+        WaitMs(10);
     }
+    Log("trigger deactivated");
 }

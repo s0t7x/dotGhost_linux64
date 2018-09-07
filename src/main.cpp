@@ -100,6 +100,7 @@ int main()
             LOG("Lost connection to process... Exiting.\n");
             break;
         }
+        const int triggerKey = Helper::StringToKeycode(Config::AimBot::Key);
         if (eng.IsConnected()) {
             dotglow.Start();
             dotaim.Start();
@@ -107,7 +108,11 @@ int main()
 
             while (eng.IsConnected() && !shouldQuit) {
                 eng.Update();
-                std::this_thread::sleep_for(std::chrono::milliseconds(50));
+                if (Config::AimBot::Mode) {
+                    dotaim.active = Helper::IsKeyDown(triggerKey);
+                    dottrigger.active = Helper::IsKeyDown(triggerKey);
+                }
+                std::this_thread::sleep_for(std::chrono::milliseconds(20));
             }
             dotglow.Stop();
             dotaim.Stop();
