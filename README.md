@@ -1,5 +1,5 @@
 # Commentary
-Our goal was to implement our own code into the game during the lifetime of Cs-Go in order to gain advantages over other players.
+Our goal was to implement our own code into a game during lifetime to gain advantages over other players.
 This approach is also known as a so-called hook. The realization of the project was mainly favored by the fact that the source code of the game is freely available.
 
 The implementation of our functions started with a so-called wallhack. Our first goal was therefore to make visible opponents behind objects and walls. For this we now had two options. On the one hand, we could have had a box drawn around each character, but that was quite a lot Effort. On the other hand, there was the possibility, thanks to the freely visible source code, to take over a function from the viewer mode which draws the individual characters in these modes through walls. So we have just made use of this feature by the hookand fake that we are in spectator mode.
